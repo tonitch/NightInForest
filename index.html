@@ -21,7 +21,7 @@
 		font-family: Courier;
 	}
 
-	p {
+p,.list{
     		color: #001c05;
 		font-family: Courier;
     		font-size: 20px;
@@ -92,7 +92,7 @@ img.center{
 	
 	<h2>Mission :</h2>
 	
-	<p>Votre mission si vous l'acceptez est de passée une semaine dans la forêt la plus dangereuse du monde [Ardennes] </p>
+	<p>Votre mission si vous l'acceptez est de passer une semaine dans la forêt la plus dangereuse du monde [Ardennes] </p>
 	
 	<div align="center">
 	
@@ -107,23 +107,46 @@ img.center{
 		<img class="top" src="Images/Cut.jpg" alt="Cut" title="Cut"></br>
 	
 		<img class="center" src="Images/Medical Kits.jpg" alt="Medical Kits" title="Medical Kits"></br>
+
+		<img class="center" src="Images/MRE.jpg" alt="Medical Kits" title="Medical Kits"></br>
 	
 		<img class="bottom" src="Images/Paracord.jpg" alt="Paracord" title="Paracord">
-	
-	
-	<div id="map" style="width:400px;height:400px;background:yellow" align="center"></div>
+
+	</div>	
+
+	<h2>Programme :</h2>
+
+		<ul class="list">
+			<li>Arrivé sur les lieux</li>
+			<li>Recherche d'un lieu de campement</li>
+			<li>Recherche de ressource pour faire un campement</li>
+			<li>Établissement d'un campement</li>
+			<li>Préparation du repas</li>
+			<li>Manger</li>
+			<li>Amusement</li>
+			<li>Dormir</li>
+		</ul>
+
+		<div align="center">
+
+		<div id="map" style="width:400px;height:400px;background:yellow" align="center"></div>
 
 	<script>
-		function myMap() {
-		var mapOptions = {
-    			center: new google.maps.LatLng(51.5, -0.12),
-    			zoom: 10,
-    			mapTypeId: google.maps.MapTypeId.HYBRID
-		}
-		var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-		}
+		 function initMap() {
+        var uluru = {lat: 50.054556, lng: 4.315008};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
 	</script>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA386rterPtbbrtckAsMgeIqNjYC7BDxl4&callback=myMap"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA386rterPtbbrtckAsMgeIqNjYC7BDxl4&callback=initMap"></script>
+
+	</div>
 </body>
 </html>
